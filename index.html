@@ -6,9 +6,14 @@
 <body style="text-align:center;font-family:Arial;">
 
 <div id="login">
+
     <h2>Enter Password</h2>
 
-    <input type="password" id="password">
+    <input
+        type="password"
+        id="password"
+        autofocus
+        placeholder="Enter Password">
 
     <br><br>
 
@@ -17,6 +22,7 @@
     </button>
 
     <p id="error" style="color:red;"></p>
+
 </div>
 
 <div id="content" style="display:none;">
@@ -36,6 +42,7 @@
 </div>
 
 <script>
+
 function checkPassword() {
 
     let pass =
@@ -56,6 +63,16 @@ function checkPassword() {
 
     }
 }
+
+document.getElementById("password")
+.addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
+        checkPassword();
+    }
+
+});
+
 </script>
 
 </body>

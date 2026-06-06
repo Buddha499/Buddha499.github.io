@@ -1,77 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Buddha Photo Download</title>
+    <title>Buddha Calculator</title>
 </head>
 <body style="text-align:center;font-family:Arial;">
 
-<div id="login">
+    <h1>Calculator</h1>
 
-    <h2>Enter Password</h2>
+    <p>Pieces</p>
+    <input type="number" id="pieces">
 
-    <input
-        type="password"
-        id="password"
-        autofocus
-        placeholder="Enter Password">
+    <p>Rate</p>
+    <input type="number" id="rate">
 
     <br><br>
 
-    <button onclick="checkPassword()">
-        Login
+    <button onclick="calculate()">
+        Calculate
     </button>
 
-    <p id="error" style="color:red;"></p>
-
-</div>
-
-<div id="content" style="display:none;">
-
-    <h1>My Photo</h1>
-
-    <img src="BP.jpg" width="350">
-
-    <br><br>
-
-    <a href="BP.jpg" download>
-        <button>
-            Download Photo
-        </button>
-    </a>
-
-</div>
+    <h2 id="result"></h2>
 
 <script>
 
-function checkPassword() {
+function calculate(){
 
-    let pass =
-    document.getElementById("password").value;
+    let pieces =
+    document.getElementById("pieces").value;
 
-    if(pass === "1234") {
+    let rate =
+    document.getElementById("rate").value;
 
-        document.getElementById("login")
-        .style.display = "none";
+    let total =
+    pieces * rate;
 
-        document.getElementById("content")
-        .style.display = "block";
+    document.getElementById("result")
+    .innerText =
+    "Total = ₹" + total;
 
-    } else {
-
-        document.getElementById("error")
-        .innerText = "Wrong Password";
-
-    }
 }
-
-document.getElementById("password")
-.addEventListener("keydown", function(event){
-
-    if(event.key === "Enter"){
-        checkPassword();
-    }
-
-});
 
 </script>
 

@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Buddha Calculator</title>
+<title>Customer Search</title>
 </head>
+
 <body style="text-align:center;font-family:Arial;">
 
-    <h1>Calculator</h1>
+<h1>Customer Search</h1>
 
-    <p>Pieces</p>
-    <input type="number" id="pieces">
+<p>Customer Name</p>
 
-    <p>Rate</p>
-    <input type="number" id="rate">
+<input type="text" id="customer">
 
-    <br><br>
+<br><br>
 
-    <button onclick="calculate()">
-        Calculate
-    </button>
+<button onclick="searchCustomer()">
+Search
+</button>
 
-    <h2 id="result"></h2>
+<h2 id="result"></h2>
 
 <script>
 
-function calculate(){
+function searchCustomer(){
 
-    let pieces =
-    document.getElementById("pieces").value;
+    let name =
+    document.getElementById("customer").value;
 
-    let rate =
-    document.getElementById("rate").value;
+    if(name === "Rahul"){
 
-    let total =
-    pieces * rate;
+        document.getElementById("result")
+        .innerText =
+        "Name: Rahul | Amount: ₹500";
 
-    document.getElementById("result")
-    .innerText =
-    "Total = ₹" + total;
+    }
+
+    else if(name === "Amit"){
+
+        document.getElementById("result")
+        .innerText =
+        "Name: Amit | Amount: ₹800";
+
+    }
+
+    else{
+
+        document.getElementById("result")
+        .innerText =
+        "Customer Not Found";
+
+    }
 
 }
 
